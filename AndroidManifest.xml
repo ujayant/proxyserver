@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.jayantupadhyaya.proxyserver"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver android:name=".URLReceiver"
+                  android:enabled="true" >
+            <intent-filter>
+                <action android:name="net.jayantupadhyaya.proxyserver.server"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".NetworkService"
+                 android:enabled="true" >
+        </service>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
